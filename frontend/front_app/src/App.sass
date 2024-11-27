@@ -1,0 +1,142 @@
+$primary-color: #28a745 
+$danger-color: #e74c3c  
+$background-color: #d0e8ff 
+$container-bg-color: white 
+$box-shadow-color: rgba(0, 0, 0, 0.2)
+$border-radius: 8px
+$font-family: "Arial", sans-serif
+
+// Reset básico
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body 
+  font-family: $font-family
+  background-color: $background-color
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  min-height: 100vh
+  padding: 20px
+
+// Container principal
+.container 
+  width: 100%
+  max-width: 800px
+  min-width: 950px
+  background: $container-bg-color
+  border-radius: $border-radius
+  box-shadow: 0 4px 8px $box-shadow-color
+  padding: 20px
+
+// Título
+main h1 
+  text-align: center
+  margin-bottom: 20px
+  color: black
+
+// Formulário
+.form 
+  display: flex
+  flex-wrap: wrap
+  gap: 15px
+  margin-bottom: 30px
+
+  label 
+    flex: 1 1 100%
+    font-weight: bold
+    margin-bottom: 5px
+
+  input[type="text"],
+  input[type="email"] 
+    flex: 1 1 100%
+    padding: 10px
+    border: 1px solid #ddd
+    border-radius: $border-radius
+    font-size: 1rem
+
+  input[type="submit"] 
+    flex: 1 1 100%
+    padding: 10px
+    background-color: white
+    color: $primary-color
+    border: 2px solid $primary-color
+    border-radius: $border-radius
+    cursor: pointer
+    font-size: 1rem
+    transition: all 0.3s
+
+    &:hover 
+      background-color: $primary-color
+      color: white
+
+// Lista de clientes
+.clients 
+  display: flex
+  flex-direction: column
+  gap: 15px
+
+.client 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 20px
+  background: $container-bg-color
+  border: 1px solid #ddd
+  border-radius: $border-radius
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+  margin-bottom: 15px
+
+  // Parágrafo
+  p 
+    flex: 1 
+    margin: 0 
+    font-size: 0.9rem
+    color: #333
+    text-align: left 
+
+  span
+    font-weight: bold
+
+
+  // Botão de exclusão
+  .delete-btn 
+    flex-shrink: 0 
+    margin-left: 15px 
+    background-color: $danger-color
+    color: white
+    border: none
+    border-radius: 50%
+    width: 35px
+    height: 35px
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    font-size: 1.2rem
+    transition: background-color 0.3s
+
+    &:hover 
+      background-color: darken($danger-color, 10%)
+
+    i 
+      font-size: 1.2rem
+
+
+// Responsividade
+@media (max-width: 600px) 
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="submit"] 
+    flex: 1 1 100%
+
+  .client 
+    flex-direction: column
+    align-items: flex-start
+
+  .delete-btn 
+    margin-top: 10px
+    align-self: flex-end
+
